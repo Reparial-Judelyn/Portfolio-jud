@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GradeTrack | Student Portfolio</title>
+  <link rel="stylesheet" href="grading.css">
+</head>
+<body>
+  <main class="app-shell">
+    <a class="back-link" href="../../index.html">← Back to Portfolio</a>
+    <section class="grade-card" aria-labelledby="app-title">
+      <header class="grade-header">
+        <div><p class="eyebrow">Student Tool</p><h1 id="app-title">GradeTrack</h1></div>
+        <span class="status">Sample Calculator</span>
+      </header>
+      <form id="grade-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="student-name">Student Name</label><input id="student-name" type="text" placeholder="Enter name" maxlength="80" aria-describedby="form-message"></div>
+          <div class="field"><label for="subject">Subject</label><input id="subject" type="text" placeholder="Enter subject" maxlength="80" aria-describedby="form-message"></div>
+        </div>
+
+        <div class="assessment-heading"><h2>Assessment Scores</h2><span>Enter scores from 0 to the maximum</span></div>
+        <div class="assessment-grid">
+          <div class="assessment">
+            <label for="quiz-score">Quiz Score</label>
+            <div class="score-row"><input id="quiz-score" type="number" min="0" step="0.01" placeholder="0"><span> / </span><input id="quiz-max" type="number" min="0.01" step="0.01" value="100" aria-label="Quiz maximum score"></div>
+            <label class="weight-label" for="quiz-weight">Weight (%)</label><input id="quiz-weight" class="weight" type="number" min="0" max="100" step="0.01" value="30">
+          </div>
+          <div class="assessment">
+            <label for="assignment-score">Assignment Score</label>
+            <div class="score-row"><input id="assignment-score" type="number" min="0" step="0.01" placeholder="0"><span> / </span><input id="assignment-max" type="number" min="0.01" step="0.01" value="100" aria-label="Assignment maximum score"></div>
+            <label class="weight-label" for="assignment-weight">Weight (%)</label><input id="assignment-weight" class="weight" type="number" min="0" max="100" step="0.01" value="30">
+          </div>
+          <div class="assessment">
+            <label for="exam-score">Examination Score</label>
+            <div class="score-row"><input id="exam-score" type="number" min="0" step="0.01" placeholder="0"><span> / </span><input id="exam-max" type="number" min="0.01" step="0.01" value="100" aria-label="Examination maximum score"></div>
+            <label class="weight-label" for="exam-weight">Weight (%)</label><input id="exam-weight" class="weight" type="number" min="0" max="100" step="0.01" value="40">
+          </div>
+        </div>
+
+        <p id="form-message" class="form-message" role="alert"></p>
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Calculate Grade</button>
+          <button class="secondary-button" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <div id="result-panel" class="result-panel" hidden aria-live="polite">
+        <div><p>Weighted Final Percentage</p><strong id="final-grade">0.00%</strong></div>
+        <div><p>Sample Remark</p><strong id="grade-remark">—</strong></div>
+      </div>
+      <p class="scale-note"><strong>Sample grading scale:</strong> 90–100 Outstanding · 80–89 Very Satisfactory · 75–79 Satisfactory · Below 75 Needs Improvement. This is a student calculator, not an official school grade.</p>
+    </section>
+  </main>
+  <script src="grading.js"></script>
+</body>
+</html>

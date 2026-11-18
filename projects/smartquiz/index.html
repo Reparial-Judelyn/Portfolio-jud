@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartQuiz | Student Portfolio</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <main class="app-shell">
+    <a class="back-link" href="../../index.html">← Back to Portfolio</a>
+    <section class="quiz-card" aria-labelledby="app-title">
+      <header class="quiz-header">
+        <div>
+          <p class="eyebrow">Interactive Learning</p>
+          <h1 id="app-title">SmartQuiz</h1>
+        </div>
+        <span class="topic">IT Fundamentals</span>
+      </header>
+
+      <div id="quiz-view">
+        <div class="progress-row" aria-live="polite">
+          <span id="question-count">Question 1 of 10</span>
+          <span id="score-count">Score: 0</span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+        <h2 id="question-text" tabindex="-1"></h2>
+        <fieldset class="answers" id="answers"><legend class="visually-hidden">Answer choices</legend></fieldset>
+        <p id="quiz-message" class="quiz-message" role="alert"></p>
+        <button id="next-button" class="primary-button" type="button" disabled>Next Question</button>
+      </div>
+
+      <div id="result-view" class="result-view" hidden>
+        <div class="result-mark" id="result-mark">A+</div>
+        <p class="eyebrow">Quiz Complete</p>
+        <h2 id="result-title">Great work!</h2>
+        <p id="result-message"></p>
+        <p class="final-score">Final score: <strong id="final-score">0 / 10</strong></p>
+        <button id="restart-button" class="primary-button" type="button">Restart Quiz</button>
+      </div>
+    </section>
+  </main>
+  <script src="quiz.js"></script>
+</body>
+</html>
